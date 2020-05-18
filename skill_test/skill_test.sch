@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -16269,8 +16269,6 @@ diameter 1.8 mm, horizontal, grid 7.62 mm</description>
 <part name="GND15" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device="" value="GND"/>
 <part name="BOOTOPTION" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="JP1E" device="" package3d_urn="urn:adsk.eagle:package:15455/1"/>
 <part name="GND16" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device="" value="GND"/>
-<part name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="10k"/>
-<part name="GND17" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device="" value="GND"/>
 <part name="C4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="025-024X044" package3d_urn="urn:adsk.eagle:package:23630/1" value="0.1uF"/>
 <part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/2" value="10k"/>
 <part name="GND18" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device="" value="GND"/>
@@ -16496,13 +16494,6 @@ diameter 1.8 mm, horizontal, grid 7.62 mm</description>
 <instance part="GND16" gate="1" x="151.06" y="-28.28" smashed="yes">
 <attribute name="VALUE" x="148.52" y="-30.82" size="1.778" layer="96"/>
 </instance>
-<instance part="R8" gate="G$1" x="156.94" y="-8.68" smashed="yes" rot="R180">
-<attribute name="NAME" x="158.21" y="-5.0986" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="158.21" y="-10.458" size="1.778" layer="96" rot="R180"/>
-</instance>
-<instance part="GND17" gate="1" x="166.06" y="-12.28" smashed="yes">
-<attribute name="VALUE" x="163.52" y="-14.82" size="1.778" layer="96"/>
-</instance>
 <instance part="C4" gate="G$1" x="162" y="3" smashed="yes" rot="R90">
 <attribute name="NAME" x="161.365" y="4.016" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="166.191" y="4.016" size="1.778" layer="96" rot="R90"/>
@@ -16661,12 +16652,6 @@ diameter 1.8 mm, horizontal, grid 7.62 mm</description>
 <pinref part="GND16" gate="1" pin="GND"/>
 <wire x1="149.54" y1="-25.54" x2="149.54" y2="-25.74" width="0.1524" layer="91"/>
 <wire x1="149.54" y1="-25.74" x2="151.06" y2="-25.74" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="R8" gate="G$1" pin="1"/>
-<pinref part="GND17" gate="1" pin="GND"/>
-<wire x1="162.02" y1="-8.68" x2="166.06" y2="-8.68" width="0.1524" layer="91"/>
-<wire x1="166.06" y1="-8.68" x2="166.06" y2="-9.74" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND18" gate="1" pin="GND"/>
@@ -17172,12 +17157,20 @@ diameter 1.8 mm, horizontal, grid 7.62 mm</description>
 <wire x1="147" y1="-26" x2="147" y2="-25.54" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$9" class="0">
+<net name="SS" class="0">
+<segment>
+<pinref part="U$3" gate="G$1" pin="CS"/>
+<wire x1="102.84" y1="36.04" x2="101.6" y2="36.04" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="36.04" x2="101.6" y2="36.8" width="0.1524" layer="91"/>
+<label x="102" y="38.2" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="IO15"/>
-<pinref part="R8" gate="G$1" pin="2"/>
-<wire x1="135.78" y1="-9.04" x2="151.86" y2="-9.04" width="0.1524" layer="91"/>
-<wire x1="151.86" y1="-9.04" x2="151.86" y2="-8.68" width="0.1524" layer="91"/>
+<wire x1="135.78" y1="-9.04" x2="138" y2="-9.04" width="0.1524" layer="91"/>
+<wire x1="138" y1="-9.04" x2="138" y2="-9.7" width="0.1524" layer="91"/>
+<wire x1="138" y1="-9.7" x2="138.8" y2="-9.7" width="0.1524" layer="91"/>
+<wire x1="138.8" y1="-9.7" x2="138.8" y2="-9.6" width="0.1524" layer="91"/>
+<label x="139.6" y="-9.7" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$13" class="0">
